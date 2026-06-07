@@ -53,18 +53,14 @@ export function Navbar() {
 
         <div className="flex items-center gap-4">
           <button
-            onClick={() => console.log("Ouverture du panier")}
-            className="flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+            onClick={() => setOpen(!open)}
+            className="flex h-9 w-9 items-center justify-center rounded-full text-white hover:bg-white/10 transition-colors"
           >
-            <span className="hidden sm:inline">MON PANIER</span>
-            <div className="relative flex h-8 w-8 items-center justify-center">
-              <ShoppingCart className="h-5 w-5" />
-              {count > 0 && (
-                <span className="absolute -right-1 -top-1 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-[#22ffaa] px-1 text-[10px] font-bold text-black">
-                  {count}
-                </span>
-              )}
-            </div>
+            {open ? (
+              <X className="h-6 w-6 text-white" />
+            ) : (
+              <Menu className="h-6 w-6 text-white" />
+            )}
           </button>
         </div>
       </div>
