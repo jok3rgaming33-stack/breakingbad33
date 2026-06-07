@@ -74,23 +74,20 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu (S'affiche sous le header quand 'open' est true) */}
+      {/* Mobile Menu (Corrigé pour forcer l'affichage par-dessus le contenu) */}
       {open && (
-        <nav className="border-t border-white/10 bg-black/90 px-4 py-4 lg:hidden animate-in slide-in-from-top-2">
-          <div className="flex flex-col gap-1">
+        <div className="absolute top-14 left-0 w-full bg-black/95 border-b border-white/10 z-[100] lg:hidden animate-in fade-in slide-in-from-top-4">
+          <nav className="flex flex-col p-4 gap-2">
             {NAV_ITEMS.map((item) => (
               <a 
                 key={item.label} 
                 href="#" 
-                onClick={() => setOpen(false)} // Ferme le menu au clic
-                className="rounded-md px-3 py-3 text-sm font-medium uppercase tracking-wide text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
+                onClick={() => setOpen(false)}
+                className="block rounded-md px-4 py-4 text-sm font-medium uppercase tracking-wide text-white transition-colors hover:bg-white/10"
               >
                 {item.label}
               </a>
             ))}
-          </div>
-        </nav>
+          </nav>
+        </div>
       )}
-    </header>
-  )
-}
