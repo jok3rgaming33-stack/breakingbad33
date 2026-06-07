@@ -1,0 +1,54 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-geist-sans), 'Geist Fallback';
+  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+}
+
+/* ==================== COULEUR PRINCIPALE BREAKING BAD ==================== */
+:root {
+  --accent: #3e6757;
+  --accent-foreground: #ffffff;
+
+  --background: #050505;
+  --foreground: #f0f0f0;
+  --card: #111111;
+  --card-foreground: #f0f0f0;
+  --border: rgba(255,255,255,0.08);
+  --input: rgba(255,255,255,0.1);
+  --primary: #f97316;           /* Orange CTA */
+  --primary-foreground: #ffffff;
+}
+
+/* Couleurs utilitaires */
+.text-accent { color: #3e6757; }
+.bg-accent { background-color: #3e6757; }
+.border-accent { border-color: #3e6757; }
+
+.accent-glow {
+  box-shadow: 0 0 25px rgba(62, 103, 87, 0.45);
+}
+
+/* Autres styles globaux */
+body {
+  background: #050505;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #3e6757;
+  color: white;
+}
+
+@keyframes smoke {
+  0%, 100% { transform: scale(0.9) translateY(0); opacity: 0.15; }
+  50% { transform: scale(1.15) translateY(-20px); opacity: 0.35; }
+}
